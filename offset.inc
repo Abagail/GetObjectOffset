@@ -17,18 +17,22 @@ static stock GetPosOffset(Float: p_p_x, Float: p_p_y, Float: p_p_z, Float: p_c_x
 	return true;
 }
 
-stock IsObjectInRangeOfPlayer(playerid, objectid, Float: radius)
+stock IsObjectInRangeOfPlayer(playerid, bool: isdynamic, objectid, Float: radius)
 {
-	static Float: obj_r_x, Float: obj_r_y, Float: obj_r_z;
-	GetObjectPos(objectid, obj_r_x, obj_r_y, obj_r_z);
+	if(!isdynamic && !IsValidObject(objectid) || isdynamic & !IsValidDynamicObject(objectid))
+	    return 0;
+	    
+	static
+		Float: obj_r_x,
+		Float: obj_r_y,
+		Float: obj_r_z
+	;
+	
+	if(isdynamic)
+		GetDynamicObjectPos(objectid, obj_r_x, obj_r_y, obj_r_z);
 
-	return IsPlayerInRangeOfPoint(playerid, radius, obj_r_x, obj_r_y, obj_r_z);
-}
-
-stock IsDynamicObjectInRangeOfPlayer(playerid, objectid, Float: radius)
-{
-	static Float: obj_r_x, Float: obj_r_y, Float: obj_r_z;
-	GetDynamicObjectPos(objectid, obj_r_x, obj_r_y, obj_r_z);
+	else
+		GetObjectPos(objectid, obj_r_x, obj_r_y, obj_r_z);
 
 	return IsPlayerInRangeOfPoint(playerid, radius, obj_r_x, obj_r_y, obj_r_z);
 }
