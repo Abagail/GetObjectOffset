@@ -3,8 +3,8 @@
 	#error "Streamer must be included."
 #endif
 
-#define OBJECT_EXTRA_TYPE_NONE          			(0)
-#define OBJECT_EXTRA_TYPE_PLAYER          			(1)
+#define OBJECT_EXTRA_TYPE_NONE          		    (0)
+#define OBJECT_EXTRA_TYPE_PLAYER          	        (1)
 #define OBJECT_EXTRA_TYPE_VEHICLE          		    (2)
 #define OBJECT_EXTRA_TYPE_OBJECT          		    (3)
 #define OBJECT_EXTRA_TYPE_DYNAMIC_OBJECT            (4)
@@ -59,7 +59,7 @@ stock GetObjectOffset(objectid, bool: isdynamic, extratype, extraid, &Float: obj
 			    return 0;
 			    
             GetObjectPos(objectid, obj_off_comp_x, obj_off_comp_y, obj_off_comp_z);
-			GetPlayerPos(extraid, obj_off_compto_x, obj_off_compto_y, obj_off_compto_z);
+	     	GetPlayerPos(extraid, obj_off_compto_x, obj_off_compto_y, obj_off_compto_z);
 			
 			return GetPosOffset(obj_off_comp_x, obj_off_comp_y, obj_off_comp_z, obj_off_compto_x, obj_off_compto_y, obj_off_compto_z, obj_off_ret_x, obj_off_ret_y, obj_off_ret_z);
 		}
@@ -70,7 +70,7 @@ stock GetObjectOffset(objectid, bool: isdynamic, extratype, extraid, &Float: obj
 			    return 0;
 
             GetObjectPos(objectid, obj_off_comp_x, obj_off_comp_y, obj_off_comp_z);
-			GetVehiclePos(extraid, obj_off_compto_x, obj_off_compto_y, obj_off_compto_z);
+	     	GetVehiclePos(extraid, obj_off_compto_x, obj_off_compto_y, obj_off_compto_z);
 
 			return GetPosOffset(obj_off_comp_x, obj_off_comp_y, obj_off_comp_z, obj_off_compto_x, obj_off_compto_y, obj_off_compto_z, obj_off_ret_x, obj_off_ret_y, obj_off_ret_z);
 		}
@@ -81,7 +81,7 @@ stock GetObjectOffset(objectid, bool: isdynamic, extratype, extraid, &Float: obj
 			    return 0;
 
             GetObjectPos(objectid, obj_off_comp_x, obj_off_comp_y, obj_off_comp_z);
-			GetObjectPos(extraid, obj_off_compto_x, obj_off_compto_y, obj_off_compto_z);
+            GetObjectPos(extraid, obj_off_compto_x, obj_off_compto_y, obj_off_compto_z);
 
 			return GetPosOffset(obj_off_comp_x, obj_off_comp_y, obj_off_comp_z, obj_off_compto_x, obj_off_compto_y, obj_off_compto_z, obj_off_ret_x, obj_off_ret_y, obj_off_ret_z);
 		}
@@ -92,7 +92,7 @@ stock GetObjectOffset(objectid, bool: isdynamic, extratype, extraid, &Float: obj
 			    return 0;
 
             GetObjectPos(objectid, obj_off_comp_x, obj_off_comp_y, obj_off_comp_z);
-			GetDynamicObjectPos(extraid, obj_off_compto_x, obj_off_compto_y, obj_off_compto_z);
+            GetDynamicObjectPos(extraid, obj_off_compto_x, obj_off_compto_y, obj_off_compto_z);
 
 			return GetPosOffset(obj_off_comp_x, obj_off_comp_y, obj_off_comp_z, obj_off_compto_x, obj_off_compto_y, obj_off_compto_z, obj_off_ret_x, obj_off_ret_y, obj_off_ret_z);
 		}
