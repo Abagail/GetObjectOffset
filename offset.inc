@@ -1,6 +1,6 @@
 #tryinclude <streamer>
 #if !defined CreateDynamicObject
-#error "Streamer must be included."
+	#error "Streamer must be included."
 #endif
 
 #define OBJECT_EXTRA_TYPE_NONE          		    (0)
@@ -87,7 +87,7 @@ stock GetObjectOffset(objectid, bool: isdynamic, extratype, extraid, &Float: obj
 		}
 
 		case OBJECT_EXTRA_TYPE_DYNAMIC_OBJECT:
-		 {
+		{
 			if(!IsValidDynamicObject(extraid))
 			    return 0;
 
