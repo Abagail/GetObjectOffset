@@ -19,7 +19,7 @@ static stock GetPosOffset(Float: p_p_x, Float: p_p_y, Float: p_p_z, Float: p_c_x
 
 stock IsObjectInRangeOfPlayer(playerid, bool: isdynamic, objectid, Float: radius)
 {
-	if(!isdynamic && !IsValidObject(objectid) || isdynamic & !IsValidDynamicObject(objectid))
+	if(!isdynamic && !IsValidObject(objectid) || isdynamic && !IsValidDynamicObject(objectid))
 	    return 0;
 	    
 	static
@@ -39,7 +39,7 @@ stock IsObjectInRangeOfPlayer(playerid, bool: isdynamic, objectid, Float: radius
 
 stock GetObjectOffsetFromPoint(objectid, bool: isdynamic, Float: cur_x, Float: cur_y, Float: cur_z, &Float: ret_x, &Float: ret_y, &Float: ret_z)
 {
-	if(!isdynamic && !IsValidObject(objectid) || isdynamic & !IsValidDynamicObject(objectid))
+	if(!isdynamic && !IsValidObject(objectid) || isdynamic && !IsValidDynamicObject(objectid))
 	    return 0;
 	    
 	static
@@ -59,7 +59,7 @@ stock GetObjectOffsetFromPoint(objectid, bool: isdynamic, Float: cur_x, Float: c
 
 stock GetObjectOffset(objectid, bool: isdynamic, extratype, extraid, &Float: obj_off_ret_x, &Float: obj_off_ret_y, &Float: obj_off_ret_z)
 {
-	if(!isdynamic && !IsValidObject(objectid) || isdynamic & !IsValidDynamicObject(objectid))
+	if(!isdynamic && !IsValidObject(objectid) || isdynamic && !IsValidDynamicObject(objectid))
 	    return 0;
 
 	if(extratype <= OBJECT_EXTRA_TYPE_NONE || extratype > OBJECT_EXTRA_TYPE_DYNAMIC_OBJECT)
