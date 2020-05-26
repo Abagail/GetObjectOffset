@@ -115,7 +115,7 @@ stock GetObjectOffset(objectid, bool: isdynamic, extratype, extraid, &Float: obj
 			if(!IsValidDynamicObject(extraid))
 			    return 0;
 
-			GetObjectPos(objectid, obj_off_comp_x, obj_off_comp_y, obj_off_comp_z);
+			GetDynamicObjectPos(objectid, obj_off_comp_x, obj_off_comp_y, obj_off_comp_z);
 			GetDynamicObjectPos(extraid, obj_off_compto_x, obj_off_compto_y, obj_off_compto_z);
 
 			return GetPosOffset(obj_off_comp_x, obj_off_comp_y, obj_off_comp_z, obj_off_compto_x, obj_off_compto_y, obj_off_compto_z, obj_off_ret_x, obj_off_ret_y, obj_off_ret_z);
